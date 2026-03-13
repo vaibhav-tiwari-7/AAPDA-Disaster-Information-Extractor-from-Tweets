@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crisis-nlp-pipeline"
+version = "0.1.0"
+description = "Disaster tweet classification pipeline (TF-IDF + logistic regression) with BigQuery + Cloud Functions."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools]
+packages = ["crisis_nlp"]
+

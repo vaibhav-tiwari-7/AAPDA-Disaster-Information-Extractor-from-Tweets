@@ -1,0 +1,16 @@
+tweet_id,text,label,event,created_at
+1001,"People trapped under collapsed building after the earthquake, we urgently need rescue teams.",request_rescue,earthquake_test_1,2024-05-01T10:00:00Z
+1002,"Floodwater has reached the second floor of our house, please send boats to rescue us.",request_rescue,flood_test_1,2024-05-01T10:05:00Z
+1003,"Many injured people lying on the road after the bridge collapse, ambulances required now.",medical_emergency,earthquake_test_1,2024-05-01T10:10:00Z
+1004,"Children with deep cuts and broken bones at the shelter, we need doctors immediately.",medical_emergency,storm_test_1,2024-05-01T10:15:00Z
+1005,"My brother has been missing since last night after the flooding started in our area.",missing_person,flood_test_1,2024-05-01T11:00:00Z
+1006,"Looking for my grandmother who was last seen near the damaged apartment block.",missing_person,earthquake_test_1,2024-05-01T11:05:00Z
+1007,"Main highway bridge washed away, our town is completely cut off by flooding.",infrastructure_damage,flood_test_1,2024-05-01T11:10:00Z
+1008,"Power plant flooded and several transformers destroyed, large parts of the city have no electricity.",infrastructure_damage,flood_test_1,2024-05-01T11:15:00Z
+1009,"Severe flooding after continuous heavy rainfall, streets in the downtown area look like rivers.",flooding,flood_test_1,2024-05-01T12:00:00Z
+1010,"Entire neighborhood underwater, residents moving to rooftops to escape the rising floodwater.",flooding,flood_test_1,2024-05-01T12:05:00Z
+1011,"We are organizing a charity drive to collect food and blankets for families affected by the storm.",donation_request,storm_test_1,2024-05-01T13:00:00Z
+1012,"Please donate to help rebuild homes destroyed by the landslide, every contribution matters.",donation_request,landslide_test_1,2024-05-01T13:05:00Z
+1013,"Heavy rain outside but nothing serious yet, just a few puddles on the road.",other,storm_test_1,2024-05-01T14:00:00Z
+1014,"Watching the news about the earthquake from another city, hoping everyone stays safe.",other,earthquake_test_1,2024-05-01T14:05:00Z
+1015,"Volunteers are distributing hot meals at the shelter, people are tired but safe for now.",other,flood_test_1,2024-05-01T14:10:00Z

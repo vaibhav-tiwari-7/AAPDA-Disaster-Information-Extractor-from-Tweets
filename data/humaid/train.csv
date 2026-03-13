@@ -1,0 +1,66 @@
+tweet_id,text,label,event,created_at
+1,"Need help! People trapped after earthquake near main road. Please send rescue team.",request_rescue,earthquake_1,2024-01-01T10:00:00Z
+2,"Bridge collapsed and roads blocked. Infrastructure severely damaged.",infrastructure_damage,earthquake_1,2024-01-01T10:05:00Z
+3,"We have injured people requiring immediate medical assistance.",medical_emergency,earthquake_1,2024-01-01T10:08:00Z
+4,"Looking for my brother, last seen near the river after flooding.",missing_person,flood_1,2024-02-10T06:00:00Z
+5,"We need clean water and food supplies. Any donation links?",donation_request,flood_1,2024-02-10T06:10:00Z
+6,"Power outage across the city; multiple buildings damaged.",infrastructure_damage,storm_1,2024-03-20T19:00:00Z
+7,"Please help evacuate elderly residents from the affected area.",request_rescue,storm_1,2024-03-20T19:10:00Z
+8,"First aid needed urgently at the shelter; many are injured.",medical_emergency,storm_1,2024-03-20T19:12:00Z
+9,"Donation drive started for victims. Clothes and blankets needed.",donation_request,storm_1,2024-03-20T20:00:00Z
+10,"Update: situation under control, thanks everyone.",other,storm_1,2024-03-20T21:00:00Z
+11,"We are stuck on the third floor, stairs collapsed. Need rescue immediately!",request_rescue,earthquake_2,2024-04-01T09:00:00Z
+12,"Family trapped in flooded house near the old bridge, please send rescue boats.",request_rescue,flood_2,2024-04-01T09:05:00Z
+13,"Elderly couple stranded on rooftop, water rising fast, urgent rescue needed.",request_rescue,flood_2,2024-04-01T09:10:00Z
+14,"People are trapped inside a collapsed parking garage after the quake. Need help.",request_rescue,earthquake_2,2024-04-01T09:15:00Z
+15,"Several residents stuck in their apartments due to landslide blocking exits. Send rescue.",request_rescue,landslide_1,2024-04-01T09:20:00Z
+16,"We need evacuation for children and elderly from the flooded neighborhood.",request_rescue,flood_2,2024-04-01T09:25:00Z
+17,"Injured people lying on the road after the explosion, ambulances required now.",medical_emergency,explosion_1,2024-04-02T10:00:00Z
+18,"Multiple people with severe injuries in the shelter, we need doctors and nurses.",medical_emergency,storm_2,2024-04-02T10:05:00Z
+19,"Man bleeding heavily after building collapse, emergency medical help needed.",medical_emergency,earthquake_2,2024-04-02T10:10:00Z
+20,"Children with broken bones and head wounds at the temporary camp, send medics.",medical_emergency,storm_2,2024-04-02T10:15:00Z
+21,"Several residents are vomiting and fainting after drinking contaminated water, need medical team.",medical_emergency,flood_2,2024-04-02T10:20:00Z
+22,"My sister has not been seen since last night after the storm hit our area.",missing_person,storm_2,2024-04-03T07:00:00Z
+23,"Looking for my father who was last spotted near the collapsed bridge.",missing_person,earthquake_2,2024-04-03T07:05:00Z
+24,"Our neighbor disappeared after the landslide; no one can reach her phone.",missing_person,landslide_1,2024-04-03T07:10:00Z
+25,"Please help us find a 10-year-old boy missing since the flood started.",missing_person,flood_2,2024-04-03T07:15:00Z
+26,"Searching for my uncle who went to deliver supplies and never came back.",missing_person,storm_2,2024-04-03T07:20:00Z
+27,"Main highway bridge has collapsed, cutting off access to the city.",infrastructure_damage,earthquake_2,2024-04-04T12:00:00Z
+28,"Electric poles down and live wires on the street, power lines severely damaged.",infrastructure_damage,storm_2,2024-04-04T12:05:00Z
+29,"Water treatment plant flooded, causing major damage to the facility.",infrastructure_damage,flood_2,2024-04-04T12:10:00Z
+30,"Several houses and shops destroyed by the landslide on the hill road.",infrastructure_damage,landslide_1,2024-04-04T12:15:00Z
+31,"Roads cracked and huge sinkholes appearing after the earthquake.",infrastructure_damage,earthquake_2,2024-04-04T12:20:00Z
+32,"We are organizing a fundraiser to buy food and blankets for affected families.",donation_request,storm_2,2024-04-05T15:00:00Z
+33,"Please donate to help rebuild homes destroyed by the flood, any amount helps.",donation_request,flood_2,2024-04-05T15:05:00Z
+34,"Raising money to provide medical supplies for injured survivors, share this link.",donation_request,earthquake_2,2024-04-05T15:10:00Z
+35,"Charity drive collecting clothes and shoes for people displaced by the landslide.",donation_request,landslide_1,2024-04-05T15:15:00Z
+36,"We set up a donation box at the community center to support storm victims.",donation_request,storm_2,2024-04-05T15:20:00Z
+37,"Heavy rain outside but nothing serious so far, roads are just wet.",other,storm_2,2024-04-06T18:00:00Z
+38,"Watching the news about the earthquake from another city, worried for everyone there.",other,earthquake_2,2024-04-06T18:05:00Z
+39,"Thank you to all volunteers and rescue workers helping after the disaster.",other,flood_2,2024-04-06T18:10:00Z
+40,"School closed today due to bad weather, kids staying at home.",other,storm_2,2024-04-06T18:15:00Z
+41,"Just heard a loud noise but turns out it was a routine drill, all safe.",other,drill_1,2024-04-06T18:20:00Z
+42,"People calling for rescue and medical help after building collapse, many are injured and trapped.",request_rescue,earthquake_3,2024-04-07T09:00:00Z
+43,"Ambulances are overwhelmed, volunteers giving first aid to wounded residents.",medical_emergency,earthquake_3,2024-04-07T09:05:00Z
+44,"Trying to find my cousin who lived in the damaged apartment block, no contact yet.",missing_person,earthquake_3,2024-04-07T09:10:00Z
+45,"Several apartment blocks have large cracks and are unsafe to enter.",infrastructure_damage,earthquake_3,2024-04-07T09:15:00Z
+46,"Online campaign started to collect funds for families who lost their homes.",donation_request,earthquake_3,2024-04-07T09:20:00Z
+47,"We are safe at the shelter now, volunteers are serving hot meals.",other,earthquake_3,2024-04-07T09:25:00Z
+48,"Families stuck on rooftops waving for help, rescue helicopters needed.",request_rescue,flood_3,2024-04-08T11:00:00Z
+49,"Many people with hypothermia symptoms after being in floodwater for hours, urgent medical care needed.",medical_emergency,flood_3,2024-04-08T11:05:00Z
+50,"My grandparents are missing since last night, their house was flooded.",missing_person,flood_3,2024-04-08T11:10:00Z
+51,"Several bridges washed away, our town is completely cut off.",infrastructure_damage,flood_3,2024-04-08T11:15:00Z
+52,"Local group collecting donations to buy generators and fuel for affected areas.",donation_request,flood_3,2024-04-08T11:20:00Z
+53,"Rain has stopped and we are cleaning up the street, situation calmer now.",other,flood_3,2024-04-08T11:25:00Z
+54,"Severe flooding due to heavy rainfall in Hafar Al Batin, Eastern Province, Saudi Arabia",flooding,flood_4,2024-04-09T09:00:00Z
+55,"Floodwater waist-deep in several streets, cars partially submerged.",flooding,flood_4,2024-04-09T09:05:00Z
+56,"Entire neighborhood under water after hours of nonstop rain.",flooding,flood_4,2024-04-09T09:10:00Z
+57,"City experiencing severe urban flooding, many roads turned into rivers.",flooding,flood_4,2024-04-09T09:15:00Z
+58,"Heavy rainfall has caused widespread flooding across low-lying areas.",flooding,flood_4,2024-04-09T09:20:00Z
+59,"Flash flooding has closed multiple highways and main roads.",flooding,flood_4,2024-04-09T09:25:00Z
+60,"Town center is flooded, shops and homes are surrounded by water.",flooding,flood_4,2024-04-09T09:30:00Z
+61,"Storm drains are overflowing, causing severe street flooding downtown.",flooding,flood_4,2024-04-09T09:35:00Z
+62,"River has burst its banks, nearby villages flooded.",flooding,flood_4,2024-04-09T09:40:00Z
+63,"Continuous heavy rain has led to dangerous flooding near the coastal area.",flooding,flood_4,2024-04-09T09:45:00Z
+64,"Floodwater entering ground-floor apartments, residents moving to higher floors.",flooding,flood_4,2024-04-09T09:50:00Z
+65,"Low-lying districts are completely underwater, authorities warning of more flooding.",flooding,flood_4,2024-04-09T09:55:00Z
