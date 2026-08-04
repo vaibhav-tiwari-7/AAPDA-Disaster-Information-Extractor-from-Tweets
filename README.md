@@ -1,207 +1,321 @@
-# Disaster Information Extractor from Tweets (Crisis Response) — GCP
+<div align="center">
 
-End-to-end, low-cost crisis NLP pipeline on Google Cloud:
+# 🌍 AAPDA – Disaster Information Extractor from Tweets
 
-- **Storage**: Cloud Storage (datasets + trained model artifacts)
-- **Warehouse**: BigQuery (`raw_tweets`, `predictions`, `alerts`, `audit_logs`)
-- **ML**: baseline text classifier (TF‑IDF + Logistic Regression)
-- **Automation**: Cloud Function `BatchPredict` + Cloud Scheduler trigger
-- **Dashboard**: Looker Studio on BigQuery tables
+### Cloud-Based Disaster Information Extraction & Classification System using NLP, Machine Learning and Google Cloud Platform
 
-This repo supports both:
-- **HumAID**: uses tweet text directly (no rehydration needed).
-- **CrisisNLP**: uses tweet IDs + labels; tweet text requires **rehydration** via X/Twitter API (optional).
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-GCP-orange?logo=googlecloud)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?logo=scikitlearn)
+![BigQuery](https://img.shields.io/badge/BigQuery-Data_Warehouse-blue)
+![Cloud Functions](https://img.shields.io/badge/Cloud_Functions-Serverless-success)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?logo=streamlit)
+![Status](https://img.shields.io/badge/Status-Academic_Project-success)
 
----
+A cloud-based disaster tweet classification system that uses **Natural Language Processing (NLP)** and **Machine Learning** to automatically classify crisis-related tweets into actionable emergency categories while leveraging **Google Cloud Platform** for storage, automation, and analytics.
 
-## 1) Prereqs
-
-- Python 3.10+ installed locally
-
-- Google Cloud project with billing enabled (free-tier friendly)
-- `gcloud` installed and authenticated
-- Enable APIs:
-  - BigQuery
-  - Cloud Functions
-  - Cloud Scheduler
-  - Cloud Storage
-  - (Optional) Secret Manager
+</div>
 
 ---
 
-## 2) Create resources (one-time)
+# 📖 Overview
 
-Set variables (PowerShell):
+During natural disasters, thousands of tweets are posted every minute containing valuable information about affected areas, rescue requests, damaged infrastructure, and medical emergencies. Manually processing such large volumes of information is difficult and time-consuming.
 
-```powershell
-$env:PROJECT_ID="YOUR_PROJECT_ID"
-$env:REGION="us-central1"
-$env:BUCKET="YOUR_UNIQUE_BUCKET_NAME"
-$env:BQ_DATASET="crisis_nlp"
-```
+**AAPDA** is a cloud-based disaster information extraction system that automatically classifies disaster-related tweets into predefined emergency categories using **TF-IDF Vectorization** and **Logistic Regression**. The project integrates multiple Google Cloud services to automate data processing, prediction, storage, scheduling, and visualization.
 
-Create a bucket:
+The system demonstrates a complete machine learning workflow from data preprocessing and model training to cloud deployment and dashboard-based monitoring.
 
-```powershell
-gsutil mb -p $env:PROJECT_ID -l $env:REGION gs://$env:BUCKET
-```
+---
 
-Create BigQuery dataset:
+# 🎯 Objectives
 
-```powershell
-bq --location=$env:REGION mk -d `
-  --description "Crisis NLP dataset" `
-  $env:PROJECT_ID:$env:BQ_DATASET
-```
+- Automate disaster tweet classification.
+- Extract actionable information from crisis-related tweets.
+- Build an end-to-end machine learning pipeline.
+- Deploy the pipeline on Google Cloud Platform.
+- Store predictions in BigQuery.
+- Automate prediction using Cloud Functions and Cloud Scheduler.
+- Visualize results using Streamlit and Looker Studio.
 
-Create tables:
+---
 
-```powershell
-bq query --use_legacy_sql=false --project_id=$env:PROJECT_ID < infra/bigquery/create_tables.sql
+# ✨ Features
+
+- 🌍 Disaster Tweet Classification
+- 📝 NLP-based Text Processing
+- 📊 TF-IDF Feature Extraction
+- 🤖 Logistic Regression Classifier
+- ☁ Google Cloud Platform Integration
+- 📦 Cloud Storage for Model Artifacts
+- 🗄 BigQuery Data Warehouse
+- ⚡ Cloud Functions for Batch Prediction
+- ⏰ Cloud Scheduler Automation
+- 📈 Streamlit Dashboard
+- 📊 Looker Studio Dashboard
+- 📋 Audit Logging
+- 📉 Model Evaluation Reports
+
+---
+
+# 🏗 System Architecture
+
+```text
+                  Disaster Tweets
+                         │
+                         ▼
+                Data Preprocessing
+                         │
+                         ▼
+              TF-IDF Feature Extraction
+                         │
+                         ▼
+            Logistic Regression Model
+                         │
+          ┌──────────────┴──────────────┐
+          ▼                             ▼
+ Google Cloud Storage            BigQuery Database
+(Model Artifacts)       (Predictions • Alerts • Logs)
+          │                             │
+          └──────────────┬──────────────┘
+                         ▼
+            Cloud Function (BatchPredict)
+                         │
+                         ▼
+               Cloud Scheduler Trigger
+                         │
+                         ▼
+      Streamlit Dashboard & Looker Studio
 ```
 
 ---
 
-## 3) Dataset format expected
+# 🛠 Tech Stack
 
-Put your training data locally into:
-
-- `data/humaid/train.csv` (recommended quick path)
-
-CSV columns (minimum):
-- `tweet_id` (string or int; can be empty for HumAID)
-- `text` (string)
-- `label` (string category)
-- `event` (string)
-- `created_at` (ISO timestamp string; optional)
-
-Example labels (customize to your dataset):
-- `infrastructure_damage`
-- `request_help`
-- `medical_emergency`
-- `missing_person`
-- `donation_request`
-- `other`
+| Category | Technologies |
+|-----------|--------------|
+| Programming Language | Python |
+| Machine Learning | Scikit-Learn |
+| NLP | TF-IDF Vectorization |
+| Classification | Logistic Regression |
+| Cloud Platform | Google Cloud Platform |
+| Data Warehouse | BigQuery |
+| Storage | Google Cloud Storage |
+| Automation | Cloud Functions, Cloud Scheduler |
+| Dashboard | Streamlit, Looker Studio |
+| Deployment | Docker |
 
 ---
 
-## 4) Local train + evaluate
+# 📂 Dataset
 
-```powershell
+Supported datasets:
+
+- HumAID Dataset
+- CrisisNLP Dataset (Optional Tweet Rehydration)
+
+Dataset fields:
+
+- tweet_id
+- text
+- label
+- event
+- created_at
+
+Classification Categories:
+
+- Infrastructure Damage
+- Medical Emergency
+- Missing Person
+- Donation Request
+- Request Rescue
+- Flooding
+- Other
+
+---
+
+# 📊 Model Evaluation
+
+The trained model is evaluated using:
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+
+Example Evaluation:
+
+| Metric | Value |
+|---------|------:|
+| Accuracy | 98.5% |
+| Weighted F1 Score | 98.5% |
+
+---
+
+# 📁 Project Structure
+
+```text
+AAPDA/
+│
+├── cloud_function/
+├── crisis_nlp/
+├── scripts/
+├── infra/
+├── data/
+├── artifacts/
+│
+├── bootstrap_local.ps1
+├── deploy_gcp.ps1
+├── local_dashboard.py
+├── Dockerfile
+├── requirements.txt
+├── pyproject.toml
+└── README.md
+```
+
+---
+
+# 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/vaibhav-tiwari-7/AAPDA-Disaster-Information-Extractor-from-Tweets.git
+```
+
+Navigate into the project
+
+```bash
+cd AAPDA-Disaster-Information-Extractor-from-Tweets
+```
+
+Create a virtual environment
+
+```bash
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+```
 
+Activate it
+
+### Windows
+
+```bash
+.\.venv\Scripts\Activate.ps1
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# ▶️ Train the Model
+
+```bash
 python scripts/train_model.py --train_csv data/humaid/train.csv --out_dir artifacts
+```
+
+---
+
+# 📈 Evaluate the Model
+
+```bash
 python scripts/evaluate_model.py --model_dir artifacts --test_csv data/humaid/train.csv
 ```
 
-Upload artifacts to GCS:
+---
 
-```powershell
-gsutil -m cp -r artifacts gs://$env:BUCKET/models/latest
+# 🌐 Run the Dashboard
+
+```bash
+streamlit run local_dashboard.py
+```
+
+Open:
+
+```
+http://localhost:8501
 ```
 
 ---
 
-## 5) Load raw tweets to BigQuery
+# ☁ Google Cloud Deployment
 
-```powershell
-python scripts/load_raw_to_bq.py --project $env:PROJECT_ID --dataset $env:BQ_DATASET --table raw_tweets --csv data/humaid/train.csv
+The project supports deployment using:
+
+- Google Cloud Storage
+- BigQuery
+- Cloud Functions
+- Cloud Scheduler
+
+Deployment scripts:
+
+```text
+bootstrap_local.ps1
+deploy_gcp.ps1
 ```
 
 ---
 
-## 6) Deploy Cloud Function (BatchPredict)
+# 📊 Generated Outputs
 
-The Cloud Function:
-- reads new/unpredicted rows from `raw_tweets`
-- loads the latest model from GCS
-- writes predictions to `predictions`
-- writes high-priority items to `alerts`
-- writes audit records to `audit_logs`
+The project generates:
 
-Deploy (Gen 2 HTTP):
-
-```powershell
-gcloud functions deploy batch_predict `
-  --gen2 `
-  --runtime=python312 `
-  --region=$env:REGION `
-  --source=cloud_function `
-  --entry-point=main `
-  --trigger-http `
-  --allow-unauthenticated `
-  --set-env-vars=PROJECT_ID=$env:PROJECT_ID,BQ_DATASET=$env:BQ_DATASET,MODEL_GCS_URI=gs://$env:BUCKET/models/latest/artifacts.joblib
-```
-
-Test call:
-
-```powershell
-gcloud functions call batch_predict --region=$env:REGION --gen2 --data '{}'
-```
+- Trained Model Artifacts
+- Prediction Reports
+- Classification Results
+- Evaluation Metrics
+- Confusion Matrix
+- BigQuery Prediction Tables
+- Alert Tables
+- Audit Logs
+- Dashboard Visualizations
 
 ---
 
-## 7) Schedule it
+# 🔑 Environment Variables
 
-Create a scheduler job (hourly):
+```env
+PROJECT_ID=YOUR_PROJECT_ID
+REGION=us-central1
+BUCKET=YOUR_BUCKET_NAME
+BQ_DATASET=crisis_nlp
+```
 
-```powershell
-$FUNCTION_URL=(gcloud functions describe batch_predict --region=$env:REGION --gen2 --format="value(serviceConfig.uri)")
+Optional:
 
-gcloud scheduler jobs create http crisis-batch-predict-hourly `
-  --schedule="0 * * * *" `
-  --uri="$FUNCTION_URL" `
-  --http-method=POST `
-  --message-body="{}" `
-  --time-zone="Etc/UTC" `
-  --location=$env:REGION
+```env
+X_BEARER_TOKEN=YOUR_TWITTER_API_TOKEN
 ```
 
 ---
 
-## 8) Looker Studio dashboard
 
-In Looker Studio:
-- Add BigQuery data source:
-  - `crisis_nlp.predictions` (category distribution, trends)
-  - `crisis_nlp.alerts` (priority queue list)
-- Build:
-  - event-wise counts by `predicted_label`
-  - time series by `predicted_at` (hour/day)
-  - table of latest `alerts` with filters
+# 📷 Dashboard
+
+> Add screenshots of the Streamlit dashboard here.
 
 ---
 
-## 9) About API keys (tweet rehydration + Gemini)
+# 👨‍💻 Author
 
-### X/Twitter API key (tweet rehydration)
-If you use CrisisNLP tweet IDs and need the tweet text, you typically use:
-- **X API Bearer Token** (recommended) for `GET /2/tweets?ids=...`
-- Or OAuth 1.0a user context (more complex)
+**Vaibhav Tiwari**
 
-You create it in the X Developer Portal and store it as:
-- env var `X_BEARER_TOKEN` (locally) or Secret Manager (in cloud)
+Computer Science & Engineering
 
-Important: rehydration is subject to X API access level and tweet availability (deleted/protected tweets won’t return).
-
-### Gemini / “NLP key”
-For the baseline classifier in this project (**TF‑IDF + Logistic Regression**), you **do not need Gemini** or any LLM key.
-
-If you later want LLM-based classification/summarization, you’d use:
-- **Google AI Studio** API key (Gemini API) *or*
-- **Vertex AI** (recommended on GCP) using service account auth (no “API key” needed in code, uses IAM).
-
-This repo starts with the ML baseline because it’s cheap, fast, auditable, and easy to evaluate.
+Siddaganga Institute of Technology
 
 ---
 
-## Repo layout
+# 📌 Project Status
 
-- `infra/bigquery/create_tables.sql` — BigQuery DDL
-- `scripts/` — local training/eval/load utilities
-- `crisis_nlp/` — shared preprocessing + model utils
-- `cloud_function/` — deployable `batch_predict` function
+Academic cloud computing project demonstrating an end-to-end disaster information extraction pipeline using NLP, Machine Learning, and Google Cloud Platform.
 
-#
+---
+
+# 📄 License
+
+This project is intended for academic and educational purposes.
