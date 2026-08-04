@@ -30,31 +30,22 @@ The system demonstrates a complete machine learning workflow from data preproces
 
 # 🎯 Objectives
 
-- Automate disaster tweet classification.
-- Extract actionable information from crisis-related tweets.
-- Build an end-to-end machine learning pipeline.
-- Deploy the pipeline on Google Cloud Platform.
-- Store predictions in BigQuery.
-- Automate prediction using Cloud Functions and Cloud Scheduler.
-- Visualize results using Streamlit and Looker Studio.
+- Classify disaster-related tweets into emergency categories.
+- Build an end-to-end NLP and machine learning pipeline.
+- Automate prediction and cloud-based data processing.
+- Store and visualize prediction results using Google Cloud services.
 
 ---
 
 # ✨ Features
 
 - 🌍 Disaster Tweet Classification
-- 📝 NLP-based Text Processing
-- 📊 TF-IDF Feature Extraction
-- 🤖 Logistic Regression Classifier
+- 📝 TF-IDF + Logistic Regression Model
 - ☁ Google Cloud Platform Integration
-- 📦 Cloud Storage for Model Artifacts
-- 🗄 BigQuery Data Warehouse
-- ⚡ Cloud Functions for Batch Prediction
-- ⏰ Cloud Scheduler Automation
-- 📈 Streamlit Dashboard
-- 📊 Looker Studio Dashboard
-- 📋 Audit Logging
-- 📉 Model Evaluation Reports
+- 🗄 BigQuery Data Storage
+- ⚡ Cloud Functions & Cloud Scheduler Automation
+- 📈 Streamlit & Looker Studio Dashboards
+- 📊 Model Evaluation & Performance Reports
 
 ---
 
