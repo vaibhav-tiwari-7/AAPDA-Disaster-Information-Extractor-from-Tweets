@@ -17,6 +17,7 @@ This repo supports both:
 ## 1) Prereqs
 
 - Python 3.10+ installed locally
+
 - Google Cloud project with billing enabled (free-tier friendly)
 - `gcloud` installed and authenticated
 - Enable APIs:
@@ -203,3 +204,4 @@ This repo starts with the ML baseline because it’s cheap, fast, auditable, and
 - `crisis_nlp/` — shared preprocessing + model utils
 - `cloud_function/` — deployable `batch_predict` function
 
+#

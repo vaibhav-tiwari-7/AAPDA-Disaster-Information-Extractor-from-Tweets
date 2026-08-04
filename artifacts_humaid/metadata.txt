@@ -1,3 +1,0 @@
-model_version=6c90d1fa3697e498
-created_at=2026-03-13T12:17:41.886310+00:00
-metadata={'max_features': 50000, 'label_set': ['caution_and_advice', 'displaced_people_and_evacuations', 'infrastructure_and_utility_damage', 'injured_or_dead_people', 'missing_or_found_people', 'not_humanitarian', 'other_relevant_information', 'requests_or_urgent_needs', 'rescue_volunteering_or_donation_effort', 'sympathy_and_support'], 'trained_on': 28802, 'created_at': '2026-03-13T12:17:41.886310+00:00', 'source': 'HumAID_events_set1_47K', 'base_dir': 'data\\humaid\\HumAID_data_events_set1_47K\\events_set1', 'rows': 28802}
