@@ -211,6 +211,32 @@ pip install -r requirements.txt
 ```
 
 ---
+# ⚡ Quick Start (Windows)
+
+For Windows users, the easiest way to launch the project is by running the provided launcher.
+
+Simply double-click:
+
+```text
+run.bat
+```
+
+The launcher will automatically:
+
+- ✔ Check if Python is installed
+- ✔ Create a virtual environment (only on the first run)
+- ✔ Install the required dependencies (if needed)
+- ✔ Launch the Streamlit dashboard
+
+Once the application starts, it will be available at:
+
+```text
+http://localhost:8501
+```
+
+> **Note:** The `run.bat` launcher is intended for **Windows** systems only. Users on Linux or macOS should follow the manual installation and execution steps described below.
+
+---
 
 # ▶️ Train the Model
 
